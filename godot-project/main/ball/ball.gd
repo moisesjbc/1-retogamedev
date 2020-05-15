@@ -29,11 +29,16 @@ func random_velocity_component():
 
 
 func _physics_process(delta):
-	# Source: https://godotengine.org/qa/25738/how-to-use-linear_velocity-reflect-or-bounce
+	# Source for colliding and bouncing:
+	# https://godotengine.org/qa/25738/how-to-use-linear_velocity-reflect-or-bounce
 	var collision = move_and_collide(speed * velocity.normalized() * delta)
 	if collision:
-		print(collision.get_collider().current_color)
 		velocity = velocity.bounce(collision.normal)
+		
+		# If the ball collides with a wall, set its color with the color of the
+		# wall
+		if collision.get_collider().name.find("wall") != -1:
+			ColorUtils.set_color(self, collision.get_collider().current_color)
 
 
 func _on_visibility_notifier_screen_exited():
