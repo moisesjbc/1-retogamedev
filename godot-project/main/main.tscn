@@ -19,5 +19,4 @@ visible = false
 
 [node name="game_over_menu" parent="gui_canvas" instance=ExtResource( 3 )]
 visible = false
-
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
