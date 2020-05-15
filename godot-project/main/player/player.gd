@@ -2,14 +2,14 @@ extends KinematicBody2D
 
 var ColorUtils = preload("res://scripts/color_utils.gd")
 
-var current_color: Color = Color(1, 0, 0)
+var current_color: String = "R"
 export var player_index: int = 1
 export var velocity: float = 900
 var direction: Vector2 = Vector2(0.0, 0.0)
 
 
 func _ready():
-	self.modulate = current_color
+	ColorUtils.set_color(self, current_color)
 
 
 func _input(_event):

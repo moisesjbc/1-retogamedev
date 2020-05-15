@@ -7,3 +7,5 @@ static func set_color(node, color: String):
 		node.modulate = Color(0, 1, 0)
 	else:
 		node.modulate = Color(0, 0, 1)
+		
+	node.current_color = color
