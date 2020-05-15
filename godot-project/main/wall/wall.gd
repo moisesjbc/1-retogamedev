@@ -1,4 +1,5 @@
 extends StaticBody2D
+
 var ColorUtils = preload("res://scripts/color_utils.gd")
 
 export var color: String = "G"
