@@ -20,6 +20,8 @@ visible = false
 
 [node name="player_1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 26, 300 )
+bot = true
+ball_path = NodePath("../ball")
 
 [node name="player_2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 998, 300 )
