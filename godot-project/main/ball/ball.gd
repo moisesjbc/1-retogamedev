@@ -6,15 +6,20 @@ export var speed: int = 500
 var velocity: Vector2
 var current_color: String = "R"
 var layer: int = 1
+var initial_position: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ColorUtils.set_color(self, current_color)
+	initial_position = self.position
 	set_physics_process(true)
+	restart()
+
+func restart():
+	self.set_position(initial_position)
+	ColorUtils.set_color(self, current_color)
 	randomize()
-	
 	velocity = Vector2(self.random_velocity_component(), self.random_velocity_component())
-	
+
 
 func random_velocity_component():
 	var _sign = 1
@@ -29,3 +34,7 @@ func _physics_process(delta):
 	if collision:
 		print(collision.get_collider().current_color)
 		velocity = velocity.bounce(collision.normal)
+
+
+func _on_visibility_notifier_screen_exited():
+	restart()

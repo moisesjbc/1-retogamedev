@@ -16,3 +16,6 @@ texture = ExtResource( 1 )
 [node name="shape" type="CollisionShape2D" parent="."]
 scale = Vector2( 5, 5 )
 shape = SubResource( 1 )
+
+[node name="visibility_notifier" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="visibility_notifier" to="." method="_on_visibility_notifier_screen_exited"]
