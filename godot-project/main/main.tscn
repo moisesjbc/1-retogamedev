@@ -18,10 +18,10 @@ visible = false
 visible = false
 
 [node name="player_1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 50, 300 )
+position = Vector2( 26, 300 )
 
 [node name="player_2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 980, 300 )
+position = Vector2( 998, 300 )
 player_index = 2
 
 [node name="wall_top_1" parent="." instance=ExtResource( 5 )]
