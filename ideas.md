@@ -1,3 +1,11 @@
+# Idea decidida
+
+- Cada jugador controla una pala con dos botones de dirección y 3 controles R-G-B para cambiar el color de la pala.
+- Las paredes del mapa van alternando también colores distintos a cada tramo. Cuando la pelota toca uno de estos tramos, cambia al color del mismo.
+- La pelota rebota en la pala únicamente si tiene el mismo color que esta.
+
+# Otras ideas
+
 - Rotar escenario
 - Intentar esquivar la pelota y que haya ataques como atraer la pala hacia ella.
 - Cambio de color de las palas (R-G-B), la pelota sólo rebota con la pala si coinciden en color.
