@@ -1,12 +1,23 @@
-extends Sprite
+extends KinematicBody2D
 
 var current_color: Color = Color(1, 0, 0)
+export var player_index: int = 1
+export var velocity: float = 900
+var direction: Vector2 = Vector2(0.0, 0.0)
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	self.modulate = current_color
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _input(_event):
+	if Input.is_action_pressed("ui_up_player_"+String(player_index)):
+		direction.y = -1
+	elif Input.is_action_pressed("ui_down_player_"+String(player_index)):
+		direction.y = 1
+	else:
+		direction.y = 0
+
+
+func _process(delta):
+	move_and_collide(velocity * direction * delta)
