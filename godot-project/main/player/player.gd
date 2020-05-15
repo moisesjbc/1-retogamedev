@@ -6,7 +6,7 @@ var current_color: String = "R"
 export var player_index: int = 1
 export var velocity: float = 900
 var direction: Vector2 = Vector2(0.0, 0.0)
-
+var layer: int = 2
 
 func _ready():
 	ColorUtils.set_color(self, current_color)

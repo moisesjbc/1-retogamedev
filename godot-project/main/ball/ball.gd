@@ -1,10 +1,15 @@
 extends KinematicBody2D
 
+var ColorUtils = preload("res://scripts/color_utils.gd")
+
 export var speed: int = 500
 var velocity: Vector2
+var current_color: String = "R"
+var layer: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ColorUtils.set_color(self, current_color)
 	set_physics_process(true)
 	randomize()
 	
