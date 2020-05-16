@@ -8,11 +8,13 @@ export var bot: bool = false
 export var velocity: float = 900
 var direction: Vector2 = Vector2(0.0, 0.0)
 var layer: int = 2
+var initial_x: int
 
 export var ball_path: NodePath
 var ball: Node2D
 
 func _ready():
+	initial_x = self.position.x
 	ColorUtils.set_color(self, current_color)
 	ball = get_node(ball_path)
 	self.bot = false
@@ -42,6 +44,7 @@ func _input(_event):
 
 func _physics_process(delta):	
 	move_and_collide(velocity * self.direction * delta)
+	self.position.x = initial_x
 
 
 func _on_ia_timer_timeout():
