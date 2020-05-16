@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menus/credits_menu/credits_menu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
 
 [node name="how_to_play_menu" type="CanvasLayer"]
 pause_mode = 2
@@ -15,53 +19,59 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 416.0
-margin_top = 218.0
-margin_right = 611.0
-margin_bottom = 383.0
+margin_left = 396.0
+margin_top = 203.0
+margin_right = 631.0
+margin_bottom = 398.0
 custom_constants/separation = 15
 
 [node name="title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 195.0
-margin_bottom = 14.0
+margin_right = 235.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.519531, 0.202942, 1 )
 text = "How to play"
 align = 1
 
 [node name="about_title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 29.0
-margin_right = 195.0
-margin_bottom = 43.0
+margin_top = 34.0
+margin_right = 235.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.164642, 0.557726, 0.648438, 1 )
 text = "About"
 align = 1
 
 [node name="about_text" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 58.0
-margin_right = 195.0
-margin_bottom = 72.0
+margin_top = 68.0
+margin_right = 235.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 1 )
 text = "Awesome About description"
 align = 1
 
 [node name="controls_title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 87.0
-margin_right = 195.0
-margin_bottom = 101.0
+margin_top = 102.0
+margin_right = 235.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.164642, 0.557726, 0.648438, 1 )
 text = "Controls"
 align = 1
 
 [node name="controls_text" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 116.0
-margin_right = 195.0
-margin_bottom = 130.0
+margin_top = 136.0
+margin_right = 235.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 1 )
 text = "Awesome controls description"
 align = 1
 
 [node name="return_to_main_menu_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 145.0
-margin_right = 195.0
-margin_bottom = 165.0
+margin_top = 170.0
+margin_right = 235.0
+margin_bottom = 195.0
 size_flags_vertical = 2
+custom_fonts/font = SubResource( 1 )
 text = "Return to main menu"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/return_to_main_menu_button" to="." method="_on_return_to_main_menu_button_pressed"]

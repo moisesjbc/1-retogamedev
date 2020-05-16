@@ -29,6 +29,10 @@ globals="*res://globals/global.gd"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
+[gui]
+
+theme/custom_font="res://fonts/Ubuntu-B.ttf"
+
 [input]
 
 ui_pause={

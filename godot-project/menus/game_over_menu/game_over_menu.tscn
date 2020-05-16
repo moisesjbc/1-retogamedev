@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menus/game_over_menu/game_over_menu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
 
 [node name="game_over_menu" type="CenterContainer"]
 pause_mode = 2
@@ -26,30 +30,36 @@ custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="layout" type="VBoxContainer" parent="panel/margin"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 250.0
-margin_bottom = 151.0
+margin_bottom = 159.0
 custom_constants/separation = 20
 
 [node name="title" type="Label" parent="panel/margin/layout"]
 margin_right = 200.0
-margin_bottom = 14.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 1 )
 text = "GAME OVER"
 align = 1
 
 [node name="restart_button" type="Button" parent="panel/margin/layout"]
-margin_top = 34.0
+margin_top = 39.0
 margin_right = 200.0
-margin_bottom = 54.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
 text = "Restart game"
 
 [node name="return_button" type="Button" parent="panel/margin/layout"]
-margin_top = 74.0
+margin_top = 84.0
 margin_right = 200.0
-margin_bottom = 94.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
 text = "Return to main menu"
 [connection signal="pressed" from="panel/margin/layout/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="panel/margin/layout/return_button" to="." method="_on_return_button_pressed"]
