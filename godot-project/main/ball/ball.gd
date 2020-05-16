@@ -40,6 +40,7 @@ func _physics_process(delta):
 	# https://godotengine.org/qa/25738/how-to-use-linear_velocity-reflect-or-bounce
 	var collision = move_and_collide(speed * velocity.normalized() * delta)
 	if collision:
+		$hit_sound.play(0.05)
 		velocity = velocity.bounce(collision.normal)
 		
 		# If the ball collides with a wall, set its color with the color of the
