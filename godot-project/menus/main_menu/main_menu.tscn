@@ -24,10 +24,10 @@ margin_right = 500.0
 margin_bottom = 14.0
 
 [node name="title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 212.0
-margin_right = 287.0
+margin_left = 219.0
+margin_right = 281.0
 margin_bottom = 14.0
-text = "GAME TITLE"
+text = "RGB Pong"
 align = 1
 
 [node name="start_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
