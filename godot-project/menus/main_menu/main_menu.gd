@@ -9,8 +9,17 @@ func _ready():
 	print_sound_mode()
 
 
-func _on_start_game_button_pressed():
+func start_game(n_players):
+	globals.n_players = n_players
 	SceneUtils.change_scene(get_tree(), "res://main/main.tscn")
+
+
+func _on_start_game_1_player_button_pressed():
+	self.start_game(1)
+
+
+func _on_start_game_2_players_button_pressed():
+	self.start_game(2)
 
 
 func _on_exit_game_button_pressed():

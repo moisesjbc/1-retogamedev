@@ -34,11 +34,12 @@ func _input(_event):
 		elif Input.is_action_just_pressed("ui_blue_player_"+String(player_index)):
 			ColorUtils.set_color(self, "B")
 
+
 func _physics_process(delta):
 	if bot:
-		if ball.position.y < self.position.y:
+		if ball.global_position.y < self.global_position.y:
 			direction.y = -1
-		elif ball.position.y > self.position.y:
+		elif ball.global_position.y > self.global_position.y:
 			direction.y = 1
 		else:
 			direction.y = 0

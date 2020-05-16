@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$player_2.bot = true
 	get_tree().paused = false
 
 

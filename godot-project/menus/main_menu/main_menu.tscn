@@ -7,17 +7,18 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+margin_top = -1.0
 margin_right = 1025.0
-margin_bottom = 602.0
+margin_bottom = 601.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 262.0
-margin_top = 177.0
+margin_top = 157.0
 margin_right = 762.0
-margin_bottom = 425.0
+margin_bottom = 445.0
 custom_constants/separation = 20
 
 [node name="HBoxContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -31,44 +32,52 @@ margin_bottom = 14.0
 text = "RGB Pong"
 align = 1
 
-[node name="start_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="start_game_1_player_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 34.0
 margin_right = 500.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 500, 0 )
-text = "Start game"
+text = "Start game (1 player)"
 
-[node name="how_to_play_button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="start_game_2_players_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 74.0
 margin_right = 500.0
 margin_bottom = 94.0
-text = "How to play"
+rect_min_size = Vector2( 500, 0 )
+text = "Start game (2 players)"
 
-[node name="credits_button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="how_to_play_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 114.0
 margin_right = 500.0
 margin_bottom = 134.0
-text = "Credits"
+text = "How to play"
 
-[node name="toggle_sound_button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="credits_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 154.0
 margin_right = 500.0
 margin_bottom = 174.0
-text = "Sound mode"
+text = "Credits"
 
-[node name="exit_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="toggle_sound_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 194.0
 margin_right = 500.0
 margin_bottom = 214.0
+text = "Sound mode"
+
+[node name="exit_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 234.0
+margin_right = 500.0
+margin_bottom = 254.0
 text = "Exit game"
 
 [node name="ludum_dare_label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 234.0
+margin_top = 274.0
 margin_right = 500.0
-margin_bottom = 248.0
+margin_bottom = 288.0
 text = "Made for ..."
 align = 1
-[connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_button" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_1_player_button" to="." method="_on_start_game_1_player_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_2_players_button" to="." method="_on_start_game_2_players_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/how_to_play_button" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/toggle_sound_button" to="." method="_on_toggle_sound_button_pressed"]
