@@ -14,6 +14,7 @@ func _ready():
 	set_physics_process(true)
 	restart()
 
+
 func restart():
 	self.set_position(initial_position)
 	ColorUtils.set_color(self, current_color)
@@ -21,11 +22,15 @@ func restart():
 	velocity = Vector2(self.random_velocity_component(), self.random_velocity_component())
 
 
-func random_velocity_component():
-	var _sign = 1
+func random_sign():
 	if randi() % 100 > 50:
-		_sign = -1
-	return _sign * randf() + 0.50
+		return 1
+	else:
+		return -1
+
+
+func random_velocity_component(from: float = 0.4, to: float = 0.6):
+	return self.random_sign() * rand_range(from, to)
 
 
 func _physics_process(delta):
