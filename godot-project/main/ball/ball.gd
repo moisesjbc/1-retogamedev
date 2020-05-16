@@ -6,7 +6,6 @@ export var speed: int = 500
 var velocity: Vector2
 var current_color: String = "R"
 var layer: int = 1
-var initial_position: Vector2
 
 # Emited whenever occurs a goal. The "player" signal is the index of the player
 # (1 / 2) who scored.
@@ -14,13 +13,12 @@ signal goal(player)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	initial_position = self.position
 	set_physics_process(true)
 	restart()
 
 
 func restart():
-	self.set_position(initial_position)
+	self.set_position(Vector2(0, 0))
 	ColorUtils.set_color(self, current_color)
 	randomize()
 	velocity = Vector2(self.random_velocity_component(), self.random_velocity_component())
