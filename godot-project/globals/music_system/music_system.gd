@@ -7,6 +7,9 @@ enum SoundMode {
 }
 var sound_mode = SoundMode.FULL
 
+func _ready():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 40)
+
 
 func toggle_sound_mode():
 	if sound_mode == SoundMode.FULL:

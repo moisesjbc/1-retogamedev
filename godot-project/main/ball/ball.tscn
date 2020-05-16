@@ -25,5 +25,6 @@ shape = SubResource( 1 )
 stream = ExtResource( 3 )
 
 [node name="wii_sound" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 4 )
 [connection signal="screen_exited" from="visibility_notifier" to="." method="_on_visibility_notifier_screen_exited"]
