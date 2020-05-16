@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://menus/main_menu/colors_selector.gd" type="Script" id=2]
 
 [node name="main_menu" type="CanvasLayer"]
 pause_mode = 2
@@ -16,9 +17,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 262.0
-margin_top = 157.0
+margin_top = 111.0
 margin_right = 762.0
-margin_bottom = 445.0
+margin_bottom = 490.0
 custom_constants/separation = 20
 
 [node name="HBoxContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -46,38 +47,80 @@ margin_bottom = 94.0
 rect_min_size = Vector2( 500, 0 )
 text = "Start game (2 players)"
 
-[node name="how_to_play_button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="colors_selector_help" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 114.0
 margin_right = 500.0
-margin_bottom = 134.0
+margin_bottom = 145.0
+text = "RGB-pong relies on the player being capable of distinguishing 3 main colors.
+Choose below the colors most suitable for you"
+
+[node name="colors_selector" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 165.0
+margin_right = 500.0
+margin_bottom = 185.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="color_r" type="ColorRect" parent="CenterContainer/VBoxContainer/colors_selector"]
+margin_right = 129.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="color_g" type="ColorRect" parent="CenterContainer/VBoxContainer/colors_selector"]
+margin_left = 133.0
+margin_right = 262.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="color_b" type="ColorRect" parent="CenterContainer/VBoxContainer/colors_selector"]
+margin_left = 266.0
+margin_right = 395.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="change_colors_button" type="Button" parent="CenterContainer/VBoxContainer/colors_selector"]
+margin_left = 399.0
+margin_right = 500.0
+margin_bottom = 20.0
+text = "Change colors"
+
+[node name="how_to_play_button" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 205.0
+margin_right = 500.0
+margin_bottom = 225.0
 text = "How to play"
 
 [node name="credits_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 154.0
+margin_top = 245.0
 margin_right = 500.0
-margin_bottom = 174.0
+margin_bottom = 265.0
 text = "Credits"
 
 [node name="toggle_sound_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 194.0
+margin_top = 285.0
 margin_right = 500.0
-margin_bottom = 214.0
+margin_bottom = 305.0
 text = "Sound mode"
 
 [node name="exit_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 234.0
+margin_top = 325.0
 margin_right = 500.0
-margin_bottom = 254.0
+margin_bottom = 345.0
 text = "Exit game"
 
 [node name="ludum_dare_label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 274.0
+margin_top = 365.0
 margin_right = 500.0
-margin_bottom = 288.0
+margin_bottom = 379.0
 text = "Made for ..."
 align = 1
 [connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_1_player_button" to="." method="_on_start_game_1_player_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_2_players_button" to="." method="_on_start_game_2_players_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/colors_selector/change_colors_button" to="CenterContainer/VBoxContainer/colors_selector" method="_on_change_colors_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/how_to_play_button" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/toggle_sound_button" to="." method="_on_toggle_sound_button_pressed"]
