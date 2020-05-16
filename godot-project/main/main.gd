@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	$player_2.bot = true
+	if globals.n_players == 1:
+		$player_2.start_bot()
 	get_tree().paused = false
 
 

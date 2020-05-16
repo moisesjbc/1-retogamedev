@@ -18,3 +18,6 @@ texture = ExtResource( 1 )
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2( -0.440125, 0.440125 )
 shape = SubResource( 1 )
+
+[node name="ia_timer" type="Timer" parent="."]
+[connection signal="timeout" from="ia_timer" to="." method="_on_ia_timer_timeout"]

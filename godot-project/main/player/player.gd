@@ -15,11 +15,16 @@ var ball: Node2D
 func _ready():
 	ColorUtils.set_color(self, current_color)
 	ball = get_node(ball_path)
-	print(ball)
+	self.bot = false
+	set_physics_process(true)
+
+func start_bot():
+	self.bot = true
+	$ia_timer.start(0.1)
 
 
 func _input(_event):
-	if not bot:
+	if not self.bot:
 		if Input.is_action_pressed("ui_up_player_"+String(player_index)):
 			direction.y = -1
 		elif Input.is_action_pressed("ui_down_player_"+String(player_index)):
@@ -35,15 +40,24 @@ func _input(_event):
 			ColorUtils.set_color(self, "B")
 
 
-func _physics_process(delta):
-	if bot:
-		if ball.global_position.y < self.global_position.y:
-			direction.y = -1
-		elif ball.global_position.y > self.global_position.y:
-			direction.y = 1
-		else:
-			direction.y = 0
-			
-		ColorUtils.set_color(self, ball.current_color)
+func _physics_process(delta):	
+	move_and_collide(velocity * self.direction * delta)
+
+
+func _on_ia_timer_timeout():
+	var direction_options = [1, -1, 0]
+	var right_option_index = 0
 	
-	move_and_collide(velocity * direction * delta)
+	if self.global_position.y < ball.global_position.y:
+		right_option_index = 0
+	elif self.global_position.y > ball.global_position.y:
+		right_option_index = 1
+	else:
+		right_option_index = 2
+		
+	if randi() % 100 < 90:
+		self.direction.y = direction_options[right_option_index]
+	else:
+		self.direction.y = direction_options[(right_option_index + 1) % 3]
+		
+	ColorUtils.set_color(self, ball.current_color)
