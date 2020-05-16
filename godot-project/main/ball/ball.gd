@@ -8,6 +8,10 @@ var current_color: String = "R"
 var layer: int = 1
 var initial_position: Vector2
 
+# Emited whenever occurs a goal. The "player" signal is the index of the player
+# (1 / 2) who scored.
+signal goal(player)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_position = self.position
@@ -47,4 +51,11 @@ func _physics_process(delta):
 
 
 func _on_visibility_notifier_screen_exited():
+	# Emit a signal indicating which player scored.
+	var player = 1
+	if position.x < 50:
+		player = 2
+	emit_signal("goal", player)
+	
+	# Restar the ball.
 	restart()

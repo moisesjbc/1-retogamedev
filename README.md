@@ -4,6 +4,11 @@ Pong videogame with color mechanics. Made for [the first #RetoGamedev](https://i
 
 Project boilerplate generated from [godot-game-boilerplate](https://github.com/moisesjbc/godot-game-boilerplate).
 
+# Third-party work used
+
+- [Godot Engine](https://godotengine.org/)
+- [Ubuntu Font](https://design.ubuntu.com/font/)
+
 ## Exporting (Linux only)
 
 1. Set the environment variable to a path pointing to Godot Engine executable. ie.
