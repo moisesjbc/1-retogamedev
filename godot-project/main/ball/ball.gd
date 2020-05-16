@@ -50,6 +50,8 @@ func _physics_process(delta):
 
 
 func _on_visibility_notifier_screen_exited():
+	$wii_sound.play(0.72)
+
 	# Emit a signal indicating which player scored.
 	var player = 1
 	if position.x < 50:

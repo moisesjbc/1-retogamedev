@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://textures/white_texture.png" type="Texture" id=1]
 [ext_resource path="res://main/ball/ball.gd" type="Script" id=2]
 [ext_resource path="res://main/ball/hit.ogg" type="AudioStream" id=3]
+[ext_resource path="res://main/ball/wii.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.03163, 1.9959 )
@@ -22,4 +23,7 @@ shape = SubResource( 1 )
 
 [node name="hit_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+
+[node name="wii_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 [connection signal="screen_exited" from="visibility_notifier" to="." method="_on_visibility_notifier_screen_exited"]
