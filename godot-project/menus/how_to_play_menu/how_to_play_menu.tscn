@@ -12,21 +12,22 @@ script = ExtResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_left = 1.0
+margin_top = -1.0
 margin_right = 1028.0
-margin_bottom = 602.0
+margin_bottom = 601.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 396.0
-margin_top = 203.0
-margin_right = 631.0
-margin_bottom = 398.0
+margin_left = 235.0
+margin_top = 93.0
+margin_right = 791.0
+margin_bottom = 508.0
 custom_constants/separation = 15
 
 [node name="title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 235.0
+margin_right = 556.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.519531, 0.202942, 1 )
@@ -35,7 +36,7 @@ align = 1
 
 [node name="about_title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 34.0
-margin_right = 235.0
+margin_right = 556.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.164642, 0.557726, 0.648438, 1 )
@@ -44,33 +45,43 @@ align = 1
 
 [node name="about_text" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 68.0
-margin_right = 235.0
-margin_bottom = 87.0
+margin_right = 556.0
+margin_bottom = 175.0
 custom_fonts/font = SubResource( 1 )
-text = "Awesome About description"
+text = "RGB Pong is a Pong with color mechanics.
+
+1. Every time the ball hits a colored wall, it will take the color of the wall
+2. Players can change the color of their paddles.
+3. Ball will only collide with the paddle if both have the same color."
 align = 1
 
 [node name="controls_title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 102.0
-margin_right = 235.0
-margin_bottom = 121.0
+margin_top = 190.0
+margin_right = 556.0
+margin_bottom = 209.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.164642, 0.557726, 0.648438, 1 )
 text = "Controls"
 align = 1
 
 [node name="controls_text" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 136.0
-margin_right = 235.0
-margin_bottom = 155.0
+margin_top = 224.0
+margin_right = 556.0
+margin_bottom = 375.0
 custom_fonts/font = SubResource( 1 )
-text = "Awesome controls description"
+text = "Player 1
+W, S: move paddle up / down
+G, H, J: change paddle color
+
+Player 2
+Up arrow, down arrow: move paddle up / down
+1, 2, 3 (numpad): change paddle color"
 align = 1
 
 [node name="return_to_main_menu_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 170.0
-margin_right = 235.0
-margin_bottom = 195.0
+margin_top = 390.0
+margin_right = 556.0
+margin_bottom = 415.0
 size_flags_vertical = 2
 custom_fonts/font = SubResource( 1 )
 text = "Return to main menu"
