@@ -4,11 +4,11 @@
 [ext_resource path="res://menus/main_menu/colors_selector.gd" type="Script" id=2]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
 
 [node name="main_menu" type="CanvasLayer"]
@@ -38,7 +38,7 @@ margin_bottom = 34.0
 margin_left = 221.0
 margin_right = 362.0
 margin_bottom = 34.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "RGB Pong"
 align = 1
 
@@ -47,7 +47,7 @@ margin_top = 54.0
 margin_right = 584.0
 margin_bottom = 79.0
 rect_min_size = Vector2( 500, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Start game (1 player)"
 
 [node name="start_game_2_players_button" type="Button" parent="CenterContainer/VBoxContainer"]
@@ -55,14 +55,14 @@ margin_top = 99.0
 margin_right = 584.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 500, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Start game (2 players)"
 
 [node name="colors_selector_help" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 144.0
 margin_right = 584.0
 margin_bottom = 185.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "RGB-pong relies on the player being capable of distinguishing 3 main colors.
 Choose below the colors most suitable for you"
 
@@ -98,42 +98,42 @@ size_flags_vertical = 3
 margin_left = 462.0
 margin_right = 582.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Change colors"
 
 [node name="how_to_play_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 250.0
 margin_right = 584.0
 margin_bottom = 275.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "How to play"
 
 [node name="credits_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 295.0
 margin_right = 584.0
 margin_bottom = 320.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Credits"
 
 [node name="toggle_sound_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 340.0
 margin_right = 584.0
 margin_bottom = 365.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Sound mode"
 
 [node name="exit_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 385.0
 margin_right = 584.0
 margin_bottom = 410.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Exit game"
 
 [node name="ludum_dare_label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 430.0
 margin_right = 584.0
 margin_bottom = 471.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Made for \"1º Reto GameDev\"
 https://itch.io/jam/1-retogamedev"
 align = 1
