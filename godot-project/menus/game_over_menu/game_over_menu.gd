@@ -13,12 +13,15 @@ func pause_game():
 func unpause_game():
 	visible = false
 	get_tree().paused = false
+	
+func _input(event):
+	if self.visible and Input.is_action_just_pressed("ui_resume"):
+		self._on_restart_button_pressed()
 
 func _on_restart_button_pressed():
 	SceneUtils.change_scene(get_tree(), "res://main/main.tscn")
 	unpause_game()
 
 func _on_return_button_pressed():
-	
 	SceneUtils.change_scene(get_tree(), "res://menus/main_menu/main_menu.tscn")
 	unpause_game()
