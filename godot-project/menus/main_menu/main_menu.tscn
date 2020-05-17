@@ -86,7 +86,7 @@ margin_top = 324.0
 margin_right = 500.0
 margin_bottom = 343.0
 custom_fonts/font = SubResource( 2 )
-text = "v1.0.1"
+text = "v1.1"
 align = 1
 
 [node name="jam_link" parent="CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
