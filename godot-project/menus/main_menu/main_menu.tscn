@@ -26,9 +26,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 220.0
-margin_top = 76.0
+margin_top = 57.0
 margin_right = 804.0
-margin_bottom = 525.0
+margin_bottom = 545.0
 custom_constants/separation = 20
 
 [node name="title" type="Label" parent="CenterContainer/VBoxContainer"]
@@ -125,12 +125,20 @@ margin_bottom = 410.0
 custom_fonts/font = SubResource( 2 )
 text = "Exit game"
 
-[node name="jam_link" parent="CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="version" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 430.0
 margin_right = 584.0
 margin_bottom = 449.0
+custom_fonts/font = SubResource( 2 )
+text = "v0.1"
+align = 1
+
+[node name="jam_link" parent="CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 469.0
+margin_right = 584.0
+margin_bottom = 488.0
 label = "Made for \"1º Reto GameDev\""
 href = "https://itch.io/jam/1-retogamedev"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_1_player_button" to="." method="_on_start_game_1_player_button_pressed"]
