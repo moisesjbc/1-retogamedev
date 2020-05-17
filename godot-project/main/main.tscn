@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://textures/white_texture.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 50
 font_data = ExtResource( 7 )
 
@@ -66,6 +70,21 @@ visible = false
 [node name="game_over_menu" parent="gui" instance=ExtResource( 3 )]
 visible = false
 
+[node name="ready_container" type="CenterContainer" parent="gui"]
+margin_right = 1023.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ready_label" type="Label" parent="gui/ready_container"]
+margin_left = 409.0
+margin_top = 271.0
+margin_right = 613.0
+margin_bottom = 328.0
+custom_fonts/font = SubResource( 2 )
+text = "Prepare!"
+
 [node name="player_1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 26, 300 )
 ball_path = NodePath("../ball_respawn_point/ball")
@@ -103,5 +122,11 @@ position = Vector2( 512, 300 )
 [node name="ball" parent="ball_respawn_point" instance=ExtResource( 6 )]
 initial_speed = 450
 speed_increment_per_hit = 20
+
+[node name="countdown_timer" type="Timer" parent="."]
+pause_mode = 2
+one_shot = true
+autostart = true
 [connection signal="player_wins" from="gui/score" to="." method="_on_score_player_wins"]
 [connection signal="goal" from="ball_respawn_point/ball" to="gui/score" method="_on_ball_goal"]
+[connection signal="timeout" from="countdown_timer" to="." method="_on_countdown_timer_timeout"]
