@@ -13,10 +13,8 @@ func pause_game():
 func unpause_game():
 	visible = false
 	get_tree().paused = false
-	print (get_tree().paused)
 
 func _on_restart_button_pressed():
-	
 	SceneUtils.change_scene(get_tree(), "res://main/main.tscn")
 	unpause_game()
 
