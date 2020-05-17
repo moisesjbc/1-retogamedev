@@ -20,8 +20,8 @@ script = ExtResource( 1 )
 
 [node name="background_sprite" type="Sprite" parent="."]
 modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
-position = Vector2( 507.829, 299.383 )
-scale = Vector2( 254.914, 150.691 )
+position = Vector2( 512.553, 299.383 )
+scale = Vector2( 263.772, 150.691 )
 texture = ExtResource( 9 )
 
 [node name="gui" type="CanvasLayer" parent="."]
@@ -101,5 +101,7 @@ current_color = "R"
 position = Vector2( 512, 300 )
 
 [node name="ball" parent="ball_respawn_point" instance=ExtResource( 6 )]
+initial_speed = 450
+speed_increment_per_hit = 20
 [connection signal="player_wins" from="gui/score" to="." method="_on_score_player_wins"]
 [connection signal="goal" from="ball_respawn_point/ball" to="gui/score" method="_on_ball_goal"]

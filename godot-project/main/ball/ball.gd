@@ -2,11 +2,12 @@ extends KinematicBody2D
 
 var ColorUtils = preload("res://scripts/color_utils.gd")
 
-export var speed: int = 500
+export var initial_speed: int = 500
 export var speed_increment_per_hit: int = 10
 var velocity: Vector2
 var current_color: String = "R"
 var layer: int = 1
+var speed: int
 
 # Emited whenever occurs a goal. The "player" signal is the index of the player
 # (1 / 2) who scored.
@@ -19,6 +20,7 @@ func _ready():
 
 
 func restart():
+	speed = initial_speed
 	self.set_position(Vector2(0, 0))
 	ColorUtils.set_color(self, current_color)
 	randomize()
