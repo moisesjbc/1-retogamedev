@@ -19,3 +19,8 @@ func _on_resume_button_pressed():
 func _on_return_button_pressed():
 	unpause_game()
 	SceneUtils.change_scene(get_tree(), "res://menus/main_menu/main_menu.tscn")
+
+
+func _input(_event):
+	if Input.is_action_just_pressed(("ui_resume")):
+		unpause_game()
