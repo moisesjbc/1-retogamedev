@@ -6,8 +6,8 @@ func run():
 	pause_game()
 
 func pause_game():
-	get_tree().paused = true
-	visible = true
+	get_tree().paused = not get_tree().paused
+	#visible = true
 
 func unpause_game():
 	get_tree().paused = false
