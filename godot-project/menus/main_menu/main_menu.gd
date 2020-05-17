@@ -2,6 +2,11 @@ extends CanvasLayer
 
 var SceneUtils = preload("res://scripts/scene_utils.gd")
 
+func _ready():
+	if (OS.get_name() == "HTML5"):
+		$CenterContainer/VBoxContainer/exit_game_button.queue_free()
+
+
 func start_game(n_players):
 	globals.n_players = n_players
 	SceneUtils.change_scene(get_tree(), "res://main/main.tscn")
