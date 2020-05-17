@@ -1,5 +1,7 @@
 # RGB Pong
 
+![RGB Pong screenshot](img/rgb-pong.png)
+
 Pong videogame with color mechanics made for [the first #RetoGamedev](https://itch.io/jam/1-retogamedev).
 
 Project boilerplate generated from [godot-game-boilerplate](https://github.com/moisesjbc/godot-game-boilerplate).
