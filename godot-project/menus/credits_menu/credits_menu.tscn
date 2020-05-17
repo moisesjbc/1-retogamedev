@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menus/credits_menu/credits_menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://menus/centered_link/centered_link.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -19,14 +20,14 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 309.0
-margin_top = 109.0
-margin_right = 712.0
-margin_bottom = 490.0
+margin_left = 360.0
+margin_top = 131.0
+margin_right = 662.0
+margin_bottom = 468.0
 custom_constants/separation = 20
 
 [node name="title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 403.0
+margin_right = 302.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.519531, 0.202942, 1 )
@@ -35,24 +36,25 @@ align = 1
 
 [node name="own_work_title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 39.0
-margin_right = 403.0
+margin_right = 302.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.160784, 0.556863, 0.647059, 1 )
 text = "Idea, programming, graphics and sound"
 align = 1
 
-[node name="name_title" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="author_name" parent="CenterContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 78.0
-margin_right = 403.0
+margin_right = 302.0
 margin_bottom = 97.0
-custom_fonts/font = SubResource( 1 )
-text = "Moisés J. Bonilla Caraballo (https://moisesjose.com)"
-align = 1
+label = "Moisés J. Bonilla Caraballo"
+href = "https://moisesjose.com/"
 
 [node name="third_party_work_title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 117.0
-margin_right = 403.0
+margin_right = 302.0
 margin_bottom = 136.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.519531, 0.202942, 1 )
@@ -61,44 +63,44 @@ align = 1
 
 [node name="software_title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 156.0
-margin_right = 403.0
+margin_right = 302.0
 margin_bottom = 175.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.160784, 0.556863, 0.647059, 1 )
 text = "Software"
 align = 1
 
-[node name="software" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="software" parent="CenterContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 195.0
-margin_right = 403.0
-margin_bottom = 236.0
-custom_fonts/font = SubResource( 1 )
-text = "Godot Engine (https://godotengine.org/)
-"
-align = 1
+margin_right = 302.0
+margin_bottom = 214.0
+label = "Godot Engine"
+href = "https://godotengine.org/"
 
 [node name="fonts_title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 256.0
-margin_right = 403.0
-margin_bottom = 275.0
+margin_top = 234.0
+margin_right = 302.0
+margin_bottom = 253.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.160784, 0.556863, 0.647059, 1 )
 text = "Fonts"
 align = 1
 
-[node name="fonts" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 295.0
-margin_right = 403.0
-margin_bottom = 336.0
-custom_fonts/font = SubResource( 1 )
-text = "Ubuntu Font (https://design.ubuntu.com/font/)
-"
-align = 1
+[node name="ubuntu_font" parent="CenterContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 273.0
+margin_right = 302.0
+margin_bottom = 292.0
+label = "Ubuntu"
+href = "https://design.ubuntu.com/font/"
 
 [node name="return_to_main_menu_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 356.0
-margin_right = 403.0
-margin_bottom = 381.0
+margin_top = 312.0
+margin_right = 302.0
+margin_bottom = 337.0
 size_flags_vertical = 2
 custom_fonts/font = SubResource( 1 )
 text = "Return to main menu"
