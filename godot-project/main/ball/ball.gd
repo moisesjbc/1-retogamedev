@@ -3,6 +3,7 @@ extends KinematicBody2D
 var ColorUtils = preload("res://scripts/color_utils.gd")
 
 export var speed: int = 500
+export var speed_increment_per_hit: int = 10
 var velocity: Vector2
 var current_color: String = "R"
 var layer: int = 1
@@ -43,10 +44,14 @@ func _physics_process(delta):
 		$hit_sound.play(0.05)
 		velocity = velocity.bounce(collision.normal)
 		
-		# If the ball collides with a wall, set its color with the color of the
-		# wall
+		
 		if collision.get_collider().name.find("wall") != -1:
+			# If the ball collides with a wall, set its color with the color of the
+			# wall.
 			ColorUtils.set_color(self, collision.get_collider().current_color)
+		else:
+			# If the ball collides with a player, increment its speed.
+			self.speed += self.speed_increment_per_hit
 
 
 func _on_visibility_notifier_screen_exited():
